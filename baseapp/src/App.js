@@ -9,9 +9,9 @@ function App() {
       <div className="App">
         <Routes>
             {/*Defined the routes for the 3 diff pages here*/}
-            <Route path="/" element={<Homepage/>} > </Route>
-            <Route path="/locations" element={<Mappage/>} > </Route>
-            <Route path="/details" element={<Detailspage/>} > </Route>
+            <Route path="/locations" element={<Mappage/>} />
+            <Route path="/details" element={<Detailspage/>} />
+            <Route path="/" element={<Homepage/>} /> 
         </Routes>
       </div>
     </HashRouter>
