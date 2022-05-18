@@ -20,7 +20,7 @@ const theme = createTheme({
     },
   },
   typography: {
-    fontFamily: ['Livvic', 'cursive'].join(','),
+    fontFamily: ['Roboto'].join(','),
     h2: {
       fontWeight: 'bold',
       fontSize: '3.3rem',

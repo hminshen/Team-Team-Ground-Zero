@@ -40,7 +40,7 @@ export default function Homepage() {
             {/*Grid for logo and title */}
             <Grid align="center">
               <img src = {logo} className={classes.logo}></img>
-                <Typography style ={{color:"#FFFFFF", fontSize: 40}}>Super AMA Home Page</Typography>
+                <Typography style ={{color:"#FFFFFF", fontSize: 40}}>EfficienSEA Map</Typography>
             </Grid>
 
             {/*Search bar */}

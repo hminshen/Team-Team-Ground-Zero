@@ -10,7 +10,7 @@ import { useNavigate } from "react-router-dom";
 import Button from '@material-ui/core/Button';
 import { InputBase } from '@material-ui/core';
 import Autocomplete from '@mui/material/Autocomplete';
-import { createTheme, ThemeProvider } from '@material-ui/core/styles';
+import Typography from '@material-ui/core/Typography';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -44,11 +44,6 @@ const useStyles = makeStyles((theme) => ({
     marginRight:theme.spacing(1)
 
   },
-  Button:{
-    padding: theme.spacing(1),
-    borderRadius: 10,
-    marginRight: '10px',
-  },
   
   
 }));
@@ -76,7 +71,7 @@ function SearchBar(props) {
     return (
     <div className={classes.root} align = 'center' >
         <Grid container spacing = {3}>
-            <Grid item xs={4}  >
+            <Grid item xs={3}  >
                 <InputBase
                 className= {classes.from}
                 
@@ -86,7 +81,7 @@ function SearchBar(props) {
                 placeholder="From"
                 />
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
             <InputBase
                 className= {classes.to}
                 id="outlined-basic"
@@ -95,7 +90,16 @@ function SearchBar(props) {
                 placeholder="To"
                 />
             </Grid>
-            <Grid item xs={4} >
+            <Grid item xs={3}>
+              <InputBase
+                  className= {classes.to}
+                  id="outlined-basic"
+                  variant="outlined"
+                  fullWidth
+                  placeholder="Date"
+                  />
+            </Grid>
+            <Grid item xs={3} >
                 <Autocomplete
                 className = {classes.filter}
                 disablePortal
@@ -104,18 +108,24 @@ function SearchBar(props) {
                 renderInput={(params) => <TextField {...params} label="Container Type" />}
                 />
             </Grid>
+            
             <Grid item xs={4}/>
-            <Grid item xs={4}/>
-            <Grid item xs={4}  align ="left">
+            <Grid item xs={4} >
                 <Button 
+                style={{
+                  borderRadius: 10,
+                  backgroundColor: "#7C89FF",
+                  color: "white",
+                  fontSize: "18px",
+                  font: "Roboto"
+                }}
                 variant="contained" 
                 fullWidth 
                 onClick={routeChange} 
                 className ={classes.button}
-                >Button </Button>
+                ><Typography>Submit</Typography> </Button>
             </Grid>
-        </Grid>
-        
+        </Grid>    
     </div>
   );
 }
