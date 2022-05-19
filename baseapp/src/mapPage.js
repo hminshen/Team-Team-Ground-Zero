@@ -21,26 +21,44 @@ const useStyles = makeStyles((theme) => ({
         width: '100vw',
         zIndex: -999,
     },
-    button: {
+    firsthalf: {
         backgroundColor: 'white',
+        borderRadius: 10,
+        margin: "auto",
+        marginTop: "30px",
+
+        width: '40vw',
+  height: '650px',
+
 
     },
+    button:{
+        borderRadius: 10,
+        margin: "auto",
+        height:"12vh",
+        width:"35vw",
+        marginTop: "50px",
+    },
     button2: {
-        backgroundColor: '#334893',
-
+        borderRadius: 10,
+        margin: "auto",
+        height:"12vh",
+        width:"35vw",
+        marginTop: "30px",
     },
     from:{
         top:"20px",
-        color:"black",
-        backgroundColor: "white",
+        color:"white",
+        backgroundColor: "#001A78",
         borderRadius: 10,
-        marginLeft: '0px',
+        marginTop: '20px',
         height: '6vh',
-        padding: theme.spacing(2)
+        padding: theme.spacing(2),
+        width: "35vw"
     },
     to:{
-      color:"black",
-      backgroundColor: "white",
+      color:"white",
+      backgroundColor: "#001A78",
       borderRadius: 10,
       marginLeft: '0px',
       height: '6vh',
@@ -63,15 +81,13 @@ const useStyles = makeStyles((theme) => ({
   }));
 
 const containerStyle = {
-  width: '700px',
+  width: '40vw',
   height: '650px',
-  top:'20px',
-  right:'20px'
+  top: "30px",
+  margin:"auto",
 };
 
-const center = {
-    lat: 1.357107, 
-    lng: 103.8194992
+const center = {lat: 1.28967, lng: 103.85007
 };
 
 function Mappage() {
@@ -104,46 +120,32 @@ const routeChange2 = () =>{
   const [isSearch,setSearch] = React.useState(null)
   return isLoaded ? (
     <div className={classes.root} style={{ color: '#033F63' }}>
-        <Grid container spacing = {6} >
-            <Grid container item spacing={2} direction="column" justifyContent="space-around" alignItems="center" xs={6}>
-                <Grid container item spacing={2} direction="column" justifyContent="space-around" alignItems="center" xs={6}>
-                    <Grid item xs={6}  >
-                        <TextField
+        <Grid container spacing = {2} >
+            {/* Side bar */}
+            <Grid item xs = {5} className = {classes.firsthalf} align = 'center'>
+            {/* to and fro */}
+            <InputBase
                         className= {classes.from}
                         id="outlined-basic"
-                        placeholder="My Location"
-                        fullWidth
+                        placeholder="Singapore"
+                        
                         
                         color="primary"
-                        onKeyPress={(event) => {
-                            if (event.key === 'Enter') {
-                                center.lat = 1.309824;
-                                center.lng = 103.717392;
-                            }
-                        }}
+                        
+                        
                         />
-                    </Grid>
-                    <Grid item xs={6}>
-                        <TextField
-                        className= {classes.to}
+            <InputBase
+                        className= {classes.from}
                         id="outlined-basic"
                         placeholder="Malaysia"
-                        fullWidth
+                        
                         
                         color="primary"
-                        onKeyPress={(event) => {
-                            if (event.key === 'Enter') {
-                                center.lat = 1.28967;
-                                center.lng = 103.85007;
-                            }
-                        }}
+                        
                         />
-                    </Grid>
-                </Grid>
-                <Grid container item spacing={4} className={classes.button} direction="row" justifyContent="space-around" alignItems="center" xs={6}>
-                    <Grid container item spacing={1} className={classes.button2} direction="row" justifyContent="space-around" alignItems="center" xs={12}>
-                        <Grid item xs={10}>
-                            <Button 
+            
+            {/* Buttons */}
+            <Button 
                                 style={{
                                 borderRadius: 10,
                                 backgroundColor: "#7C89FF",
@@ -156,13 +158,6 @@ const routeChange2 = () =>{
                                 onClick={routeChange} 
                                 className ={classes.button}
                                 ><Typography>Singapore Shipping Corporation Limited</Typography> </Button>
-                            </Grid>
-                            <Grid item xs={2} alignItems="stretch" style={{color:"white"}}>
-                            <Typography>~5km</Typography>
-                                </Grid>
-                        </Grid>
-                    <Grid container item spacing={1} className={classes.button2} direction="row" justifyContent="space-around" alignItems="center" xs={12}>
-                        <Grid item xs={10}>
                         <Button 
                                 style={{
                                 borderRadius: 10,
@@ -174,29 +169,37 @@ const routeChange2 = () =>{
                                 variant="contained" 
                                 fullWidth
                                 onClick={routeChange2} 
-                                className ={classes.button}
+                                className ={classes.button2}
                                 ><Typography>Keppel Logistics Center</Typography> </Button>
-                        </Grid>
-                        <Grid item xs={2} alignItems="stretch" style={{color:"white"}}>
-                            <Typography>~8km</Typography>
-                         </Grid>
-                    </Grid>
-                </Grid>
+                                <Button 
+                                style={{
+                                borderRadius: 10,
+                                backgroundColor: "#7C89FF",
+                                color: "white",
+                                fontSize: "18px",
+                                font: "Roboto"
+                                }}
+                                variant="contained" 
+                                fullWidth
+                                onClick={routeChange2} 
+                                className ={classes.button2}
+                                ><Typography>Jurong Port</Typography> </Button>
             </Grid>
-            <Grid item xs={6}>
+            {/* Map */}
+            <Grid item xs = {5}>
                 <item><GoogleMap
-                    mapContainerStyle={containerStyle}
-                    center={center}
-                    zoom={8}
-                    onLoad={onLoad}
-                    onUnmount={onUnmount}
-                >
-                    { /* Child components, such as markers, info windows, etc. */ }
-                    {/* Jurong Port and SSCL and keppel latitude/longitude */}
-                    <Marker position={{ lat: 1.309824, lng: 103.717392}} label= "Jurong Port Center"/>
-                    <Marker position={{ lat: 1.28967, lng: 103.85007}} label= "Singapore Shipping Corporation Limited"/>
-                    <Marker position={{ lat: 1.2713913, lng: 103.8284318}} label= "Keppel Logistics Center"/>
-                </GoogleMap></item>
+                        mapContainerStyle={containerStyle}
+                        center={center}
+                        zoom={10}
+                        onLoad={onLoad}
+                        onUnmount={onUnmount}
+                    >
+                        { /* Child components, such as markers, info windows, etc. */ }
+                        {/* Jurong Port and SSCL and keppel latitude/longitude */}
+                        <Marker position={{ lat: 1.309824, lng: 103.717392}} label= "Jurong Port Center"/>
+                        <Marker position={{ lat: 1.28967, lng: 103.85007}} label= "Singapore Shipping Corporation Limited"/>
+                        <Marker position={{ lat: 1.2713913, lng: 103.8284318}} label= "Keppel Logistics Center"/>
+                    </GoogleMap></item>
             </Grid>
         </Grid>
         <img src={footer} className={classes.footer} />
