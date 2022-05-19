@@ -4,8 +4,8 @@ import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
 
 import footer from './imgs/footerG0.png';
-import logo from './imgs/examplecompanylogo.png';
-import container from './imgs/containervisual.png';
+import logo from './imgs/keppelLogo.png';
+import container from './imgs/keppelContainer.png';
 import details from "./imgs/shippingdetails.png"
 
 const useStyles = makeStyles((theme) => ({
@@ -61,26 +61,24 @@ export default function Detailspage() {
             <Grid container spacing = {2}>
               <Grid item xs = {5} className= {classes.logodiv} align = 'center'>
                 <img src = {logo} className = {classes.logo}></img>
-                <Typography style ={{color:"#FFFFFF", fontSize: 24}}>Singapore Shipping Corporation Limited</Typography> 
+                <Typography style ={{color:"#FFFFFF", fontSize: 24}}>Keppel Logistics</Typography> 
               </Grid>
 
               <Grid item xs = {5} className = {classes.subdiv} align = "center">
                 <img src = {container} className = {classes.cargo}></img>
                 
-                <Typography style ={{color:"#FFFFFF", fontSize: 20, }}>Container #BICU1234567</Typography>
-                <Typography style ={{color:"#FFFFFF", fontSize: 18,}}>Volume Available: 30 cubic metres</Typography>
-                <Typography style ={{color:"#FFFFFF", fontSize: 18,}}>Weightage Available: 8,000 kilogrammes</Typography>
-                <Typography style ={{color:"#FFFFFF", fontSize: 18,}}>Price: $3.50 per kilogrammes</Typography>
+                <Typography style ={{color:"#FFFFFF", fontSize: 20, }}>Container #ACBI1234567</Typography>
+                <Typography style ={{color:"#FFFFFF", fontSize: 18,}}>Volume Available: 70 cubic metres</Typography>
+                <Typography style ={{color:"#FFFFFF", fontSize: 18,}}>Weightage Available: 6,000 kilogrammes</Typography>
+                <Typography style ={{color:"#FFFFFF", fontSize: 18,}}>Price: $2.50 per kilogrammes</Typography>
               </Grid>
 
               <Grid item xs = {5} className = {classes.subdiv}>
                 <Typography style ={{color:"#FFFFFF", fontSize: 20, marginTop: "10px"}}>
-                  Singapore Shipping Corporation Limited (SSC) is well-established shipping group in Asia and listed on the main board of SGX.
-                </Typography>
+                Keppel Logistics operates world-class logistics facilities with state-of-the-art IT infrastructure in China, Hong Kong, Malaysia, Indonesia, Vietnam, and Australia                </Typography>
                 <h3></h3>
                 <Typography style ={{color:"#FFFFFF", fontSize: 20}}>
-                It is a spin-off from Hai Sun Hup Group Ltd (now known as Stamford Land Corporation Ltd) when the latter de-merged its shipping and logistics businesses in 2000 to concentrate on its hotel and property businesses.
-                </Typography>
+                We have more than three million square feet of warehousing facilities to support comprehensive and integrated end-to-end logistical services in warehousing, transportation, distribution, value-add projects, freight management and consolidation services.                </Typography>
               </Grid>
 
               <Grid item xs = {5} className = {classes.subdiv} align= "center">

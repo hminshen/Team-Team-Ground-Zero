@@ -105,7 +105,7 @@ function SearchBar(props) {
                 disablePortal
                 id="combo-box-demo"
                 options={filters}
-                renderInput={(params) => <TextField {...params} label="Container Type" />}
+                renderInput={(params) => <TextField {...params} label="Goods Category" />}
                 />
             </Grid>
             
