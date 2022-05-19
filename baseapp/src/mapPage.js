@@ -70,8 +70,8 @@ const containerStyle = {
 };
 
 const center = {
-    lat: 1.309824, 
-    lng: 103.717392
+    lat: 1.357107, 
+    lng: 103.8194992
 };
 
 function Mappage() {
@@ -127,7 +127,7 @@ const routeChange2 = () =>{
                         <TextField
                         className= {classes.to}
                         id="outlined-basic"
-                        placeholder="To"
+                        placeholder="Malaysia"
                         fullWidth
                         
                         color="primary"
