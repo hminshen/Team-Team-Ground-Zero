@@ -103,7 +103,7 @@ const routeChange2 = () =>{
 }
   const { isLoaded } = useJsApiLoader({
     id: 'google-map-script',
-    googleMapsApiKey: "AIzaSyCKcuTMH5JlYP6KAgAlP-znr3S6Y76JodA"
+    googleMapsApiKey: "Fill in API Key here"
   })
 
   const [map, setMap] = React.useState(null)
